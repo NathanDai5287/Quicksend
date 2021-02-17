@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+  "version": "0.69",
+  "name": "Meet",
+  "description": "puts the message most recently sent into the text box",
+  "permissions": [
+    "activeTab"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://meet.google.com/*"
+      ],
+      "js": [
+        "app.js"
+      ]
+    }
+  ],
+  "browser_action": {
+    "default_icon": "icon.png"
+  },
+  "background": {
+    "persistent": false,
+    "scripts": [
+      "app.js"
+    ]
+  }
+}
