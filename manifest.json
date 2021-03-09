@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
-  "version": "0.69",
-  "name": "Meet",
-  "description": "puts the message most recently sent into the text box",
+  "version": "0.1",
+  "name": "Quicksend",
+  "description": "never have to answer trivial questions during class again",
   "permissions": [
     "activeTab"
   ],
@@ -18,11 +18,5 @@
   ],
   "browser_action": {
     "default_icon": "icon.png"
-  },
-  "background": {
-    "persistent": false,
-    "scripts": [
-      "app.js"
-    ]
   }
 }
