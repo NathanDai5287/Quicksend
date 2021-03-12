@@ -1,6 +1,9 @@
 function message() {
     // get most recent message
     let messages = document.getElementsByClassName('oIy2qc');
+    if (messages[messages.length - 1] == undefined) {
+        return undefined;
+    }
     let latest = messages[messages.length - 1].innerText;
 
     // enter into text box
@@ -25,31 +28,7 @@ function message() {
     }
     button.setAttribute('aria-disabled', false);
 
-    console.log('done');
-
     return latest;
-}
-
-function load() {
-    var bar = document.getElementsByClassName('f0WtFf')[0];
-
-    var button = document.createElement('button');
-    button.id = 'send-button';
-    button.innerText = "Send";
-    button.onclick = message;
-
-    button.style.width = '15%';
-    button.style.height = '50px';
-    button.style.backgroundColor = 'white';
-    button.style.outline = 'none';
-    button.style.border = 'none';
-    button.style.cursor = 'pointer';
-    button.style.content = 'send.png';
-
-    bar.insertBefore(button, bar.firstChild);
-
-    console.log('done');
-
 }
 
 document.onkeydown = function(e) {
@@ -58,15 +37,3 @@ document.onkeydown = function(e) {
         message();
     }
 }
-
-setTimeout(load, 20000);
-
-// var loaded = false;
-// for (let i = 0; i < 10 && !loaded; i++) {
-//     setTimeout(function() {
-//         if (document.getElementsByClassName[0] != undefined) {
-//             load();
-//             loaded = true
-//         }
-//     }, 5000);
-// }
