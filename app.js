@@ -31,13 +31,6 @@ function message() {
 }
 
 function load() {
-    // var css = document.createElement('link');
-        // css.rel = 'stylesheet';
-        // css.type = 'text/css';
-        // css.href = 'style.css';
-
-    // document.head.appendChild(css);
-
     var bar = document.getElementsByClassName('f0WtFf')[0];
 
     var button = document.createElement('button');
@@ -45,16 +38,13 @@ function load() {
     button.innerText = "Send";
     button.onclick = message;
 
-    button.onkeydown = function(e) { // BUG: keyboard shortcut not working
-        var key = e.key;
-        if (key == 113) {
-            message();
-            console.log('clicked');
-        }
-    }
-
     button.style.width = '15%';
-    button.style.height = '50%';
+    button.style.height = '50px';
+    button.style.backgroundColor = 'white';
+    button.style.outline = 'none';
+    button.style.border = 'none';
+    button.style.cursor = 'pointer';
+    button.style.content = 'send.png';
 
     bar.insertBefore(button, bar.firstChild);
 
@@ -63,10 +53,20 @@ function load() {
 }
 
 document.onkeydown = function(e) {
-    var key = e.key
-    if (key == 112) {
+    var key = e.key;
+    if (key == 'F2') {
         message();
     }
 }
 
 setTimeout(load, 20000);
+
+// var loaded = false;
+// for (let i = 0; i < 10 && !loaded; i++) {
+//     setTimeout(function() {
+//         if (document.getElementsByClassName[0] != undefined) {
+//             load();
+//             loaded = true
+//         }
+//     }, 5000);
+// }
