@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
-  "version": "0.69",
+  "version": "6.9",
   "name": "Quicksend",
-  "description": "never answer trivial questions during class again 😴",
+  "description": "NEVER answer TRIVIAL questions during class again 😴",
   "permissions": [
     "activeTab"
   ],
