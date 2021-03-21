@@ -37,3 +37,6 @@ document.onkeydown = function(e) {
         message();
     }
 }
+// chrome.browserAction.onClicked.addListener(function(tab) { // TODO: make it run on icon click so that the keyboard shortcut can be changed
+//     message();
+// });
