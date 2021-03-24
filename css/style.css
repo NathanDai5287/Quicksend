@@ -1,0 +1,13 @@
+@font-face {
+	font-family: "Nunito";
+	src: url("Nunito-Regular.ttf");
+}
+
+body {
+	font-family: "Nunito";
+}
+
+.logo {
+	text-align: center;
+	background-color: black;
+}
