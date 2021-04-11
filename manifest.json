@@ -3,9 +3,6 @@
   "version": "6.9",
   "name": "Quicksend",
   "description": "NEVER answer TRIVIAL questions during class again 😴",
-  "permissions": [
-    "activeTab"
-  ],
   "content_scripts": [
     {
       "matches": [
