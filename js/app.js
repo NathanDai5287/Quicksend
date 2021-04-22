@@ -48,7 +48,7 @@ document.onkeydown = function(e) {
             letter = items.letter;
         });
 
-        if (e.ctrlKey == control && e.altKey == alt && e.shiftKey == shift && e.key == letter) {
+        if (e.ctrlKey == control && e.altKey == alt && e.shiftKey == shift && e.key.toLowerCase() == letter.toLowerCase()) {
             message();
         }
     }
