@@ -35,5 +35,21 @@ document.onkeydown = function(e) {
     var key = e.key;
     if (key == 'F2') {
         message();
+    } else {
+        chrome.storage.sync.get([
+            'control',
+            'alt',
+            'shift',
+            'letter'
+        ], function(items) {
+            control = items.control;
+            alt = items.alt;
+            shift = items.shift;
+            letter = items.letter;
+        });
+
+        if (e.ctrlKey == control && e.altKey == alt && e.shiftKey == shift && e.key == letter) {
+            message();
+        }
     }
 }
