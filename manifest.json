@@ -14,12 +14,19 @@
     }
   ],
   "browser_action": {
-    "default_icon": "graphics/icon.png"
+    "default_icon": "graphics/icon.png",
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "48": "graphics/icon48.png"
   },
   "background": {
     "scripts": [
       "js/background.js"
     ],
     "persistent": false
-  }
+  },
+  "permissions": [
+    "storage"
+  ]
 }
