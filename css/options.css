@@ -1,0 +1,255 @@
+@font-face {
+	font-family: nunito;
+	src: url(/fonts/Nunito-Regular.ttf);
+	font-weight: normal;
+}
+
+body {
+	font-family: nunito;
+	font-size: 16px;
+	color: #223254;
+	background: #F6F1D1;
+}
+
+/* div .all {
+	background: white;
+} */
+
+/* The container */
+
+.container {
+	display: block;
+	position: relative;
+	padding-left: 35px;
+	margin-top: 20px;
+	margin-left: 20px;
+	margin-bottom: 12px;
+	cursor: pointer;
+	font-size: 22px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	max-width: auto;
+}
+
+/* Hide the browser's default checkbox */
+
+.container input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	height: 0;
+	width: 0;
+}
+
+/* Create a custom checkbox */
+
+.checkmark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 25px;
+	width: 25px;
+	background-color: #eee;
+	transition: background-color 0.3s;
+	/* background-color: #038277; */
+	background-color: rgb(205, 255, 232);
+	border: 2px solid;
+}
+
+/* On mouse-over, add a grey background color */
+
+.container:hover input~.checkmark {
+	/* background-color: #ccc; */
+	background-color: rgb(121, 186, 156);
+}
+
+/* When the checkbox is checked, add a blue background */
+
+.container input:checked~.checkmark {
+	background-color: #038277;
+	/* background-color: #2196F3; */
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+
+.checkmark:after {
+	content: "";
+	position: absolute;
+	display: none;
+}
+
+/* Show the checkmark when checked */
+
+.container input:checked~.checkmark:after {
+	display: block;
+}
+
+/* Style the checkmark/indicator */
+
+.container .checkmark:after {
+	left: 9px;
+	top: 5px;
+	width: 5px;
+	height: 10px;
+	border: solid white;
+	border-width: 0 3px 3px 0;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+.letter {
+	height: 70px;
+	display: grid;
+	font-family: nunito;
+	-webkit-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+	position: relative;
+	margin: 10px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	width: 100%;
+	max-width: 280px;
+	border-radius: 3px;
+	overflow: hidden;
+	border: 1px solid #C3BFA5;
+}
+
+.letter .label {
+	position: absolute;
+	top: 20px;
+	left: 12px;
+	font-size: 16px;
+	color: rgba(0, 0, 0, 0.5);
+	font-weight: 500;
+	transform-origin: 0 0;
+	transform: translate3d(0, 0, 0);
+	transition: all .2s ease;
+	pointer-events: none;
+}
+
+.letter .focus-bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.05);
+	z-index: -1;
+	transform: scaleX(0);
+	transform-origin: left;
+}
+
+.letter input {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 100%;
+	border: 0;
+	font-family: nunito;
+	padding: 16px 12px 0 12px;
+	height: 56px;
+	font-size: 16px;
+	font-weight: 400;
+	background: rgba(0, 0, 0, 0.02);
+	box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+	color: #000;
+	transition: all .15s ease;
+}
+
+.letter input:hover {
+	background: rgba(0, 0, 0, 0.04);
+	box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.5);
+}
+
+.letter input:not(:placeholder-shown)+.label {
+	color: rgba(0, 0, 0, 0.5);
+	transform: translate3d(0, -12px, 0) scale(0.75);
+}
+
+.letter input:focus {
+	background: rgba(0, 0, 0, 0.05);
+	outline: none;
+	box-shadow: inset 0 -2px 0 #0077FF;
+}
+
+.letter input:focus+.label {
+	/* color: #0077FF; */
+	color: #038277;
+	transform: translate3d(0, -12px, 0) scale(0.75);
+}
+
+.letter input:focus+.label+.focus-bg {
+	transform: scaleX(1);
+	transition: all .1s ease;
+}
+
+#letter {
+	/* background: rgb(205, 255, 232); */
+	background: #F6F3E1;
+}
+
+*::before, *::after {
+	box-sizing: border-box;
+}
+
+button {
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+	outline: none;
+	border: 0;
+	vertical-align: middle;
+	text-decoration: none;
+	font-size: inherit;
+	font-family: inherit;
+}
+
+button.learn-more {
+	font-weight: 600;
+	color: #382b22;
+	text-transform: uppercase;
+	padding: 1.25em 2em;
+	background: #CDFFE8;
+	border: 2px solid #b18597;
+	border-radius: 0.75em;
+	transform-style: preserve-3d;
+	transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+
+button.learn-more::before {
+	position: absolute;
+	content: '';
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #96E8C3;
+	border-radius: inherit;
+	box-shadow: 0 0 0 2px #b18597, 0 0.625em 0 0 #CCFFE7;
+	transform: translate3d(0, 0.75em, -1em);
+	transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+
+button.learn-more:hover {
+	background: #BBE8D3;
+	transform: translate(0, 0.25em);
+}
+
+button.learn-more:hover::before {
+	box-shadow: 0 0 0 2px #b18597, 0 0.5em 0 0 #CCFFE7;
+	transform: translate3d(0, 0.5em, -1em);
+}
+
+button.learn-more:active {
+	background: #BBE8D3;
+	transform: translate(0em, 0.75em);
+}
+
+button.learn-more:active::before {
+	box-shadow: 0 0 0 2px #b18597, 0 0 #CCFFE7;
+	transform: translate3d(0, 0, -1em);
+}

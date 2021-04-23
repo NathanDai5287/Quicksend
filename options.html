@@ -1,26 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<script src="js/options.js"></script>
+	<link rel="stylesheet" href="css/options.css">
 
 	<title>Keyboard Shortcut</title>
 </head>
+
 <body>
-	<input type="checkbox" id="control" name="control" value="control">
-	<label for="control">Ctrl</label><br>
+	<h2>Choose How to Activate Quicksend</h2>
 
-	<input type="checkbox" id="alt" name="alt" value="alt">
-	<label for="alt">Alt</label><br>
+	<label class="container">Ctrl
+		<input type="checkbox" id="control">
+		<span class="checkmark"></span>
+	</label>
 
-	<input type="checkbox" id="shift" name="shift" value="shift">
-	<label for="shift">Shift</label><br><br>
+	<label class="container">Alt
+		<input type="checkbox" id="alt">
+		<span class="checkmark"></span>
+	</label>
 
-	<input type="text" maxlength="1" id="letter" style="text-transform: lowercase"><br><br>
+	<label class="container">Shift
+		<input type="checkbox" id="shift">
+		<span class="checkmark"></span>
+	</label>
 
-	<button id="save">Save</button>
+	<!-- <input type="text" maxlength="1" id="letter" style="text-transform: lowercase"><br><br> -->
+	<label for="letter" class="letter">
+		<input type="text" id="letter" style="text-transform: lowercase" placeholder="&nbsp;">
+		<span class="label">Character</span>
+		<span class="focus-bg"></span>
+	</label>
+
+	<button class="learn-more" id="save">Save</button>
 </body>
+
 </html>
