@@ -30,7 +30,7 @@ body {
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
-	max-width: auto;
+	width: 100px;
 }
 
 /* Hide the browser's default checkbox */
