@@ -26,7 +26,12 @@ function restore() {
 		document.getElementById('control').checked = items.control;
 		document.getElementById('alt').checked = items.alt;
 		document.getElementById('shift').checked = items.shift;
-		document.getElementById('letter').value = items.letter;
+
+		if (items.letter == undefined) {
+			document.getElementById('letter').value = '';
+		} else {
+			document.getElementById('letter').value = items.letter;
+		}
 	});
 }
 

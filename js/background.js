@@ -6,3 +6,5 @@ chrome.runtime.onInstalled.addListener(function () {
 
 	return false;
 });
+
+// TODO: add a "would you like to see popup for new updates"
