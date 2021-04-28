@@ -7,37 +7,92 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<script src="js/options.js"></script>
+	<script src="js/define.js"></script>
 	<link rel="stylesheet" href="css/options.css">
+	<link rel="stylesheet" href="css/buttons.css">
+	<link rel="stylesheet" href="css/checkbox.css">
+	<link rel="stylesheet" href="css/textbox.css">
+	<link rel="stylesheet" href="css/scrollbar.css">
 
-	<title>Keyboard Shortcut</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<title>Setitngs</title>
 </head>
 
 <body>
-	<h2>Choose How to Activate Quicksend</h2>
+	<div class="keyboard-shortcut" width="33%">
+		<h2>Choose How to Activate Quicksend</h2>
 
-	<label class="container">Ctrl
-		<input type="checkbox" id="control">
-		<span class="checkmark"></span>
-	</label>
+		<div class="commands">
+			<label class="container">Ctrl
+				<input type="checkbox" id="control">
+				<span class="checkmark"></span>
+			</label>
 
-	<label class="container">Alt
-		<input type="checkbox" id="alt">
-		<span class="checkmark"></span>
-	</label>
+			<label class="container">Alt
+				<input type="checkbox" id="alt">
+				<span class="checkmark"></span>
+			</label>
 
-	<label class="container">Shift
-		<input type="checkbox" id="shift">
-		<span class="checkmark"></span>
-	</label>
+			<label class="container">Shift
+				<input type="checkbox" id="shift">
+				<span class="checkmark"></span>
+			</label>
+		</div>
 
-	<!-- <input type="text" maxlength="1" id="letter" style="text-transform: lowercase"><br><br> -->
-	<label for="letter" class="letter">
-		<input type="text" id="letter" style="text-transform: lowercase" placeholder="&nbsp;" maxlength="1">
-		<span class="label">Character</span>
-		<span class="focus-bg"></span>
-	</label>
+		<label for="letter" class="message-input">
+			<input type="text" id="letter" style="text-transform: lowercase" placeholder="&nbsp;" maxlength="1">
+			<span class="label">Character</span>
+			<span class="focus-bg"></span>
+		</label>
 
-	<button class="save" id="save">Save</button>
+		<button class="quicksend-button" id="save">Save</button>
+	</div>
+
+	<div class="sendables">
+		<div class="quicksend-buttons">
+			<button class="quicksend-button" id="add-sendables">Add</button>
+			<button class="quicksend-button" id="save-sendables">Save</button>
+		</div>
+
+		<h2 class="title">Add Sendables</h2>
+		<div class="define-messages" id="definitions">
+			<!-- Here is the outdated layout for what the javascript adds -->
+			<!-- <div class="definition">
+					<button class="trash"><i class="fa fa-trash" aria-hidden="true"></i></button>
+					<div class="commands">
+						<label class="container horizontal">Ctrl
+							<input type="checkbox" id="control">
+							<span class="checkmark"></span>
+						</label>
+
+						<label class="container horizontal">Alt
+						<input type="checkbox" id="alt">
+						<span class="checkmark"></span>
+					</label>
+
+					<label class="container horizontal">Shift
+						<input type="checkbox" id="shift">
+						<span class="checkmark"></span>
+					</label>
+				</div>
+
+				<label for="character198246" class="message-input horizontal character-input">
+					<input type="text" id="character198246" style="text-transform: lowercase" placeholder="&nbsp;"
+					maxlength="1">
+					<span class="label">Character</span>
+					<span class="focus-bg"></span>
+				</label>
+
+				<label for="message" class="message-input message">
+					<input type="text" id="message" placeholder="&nbsp;">
+					<span class="label">Message</span>
+					<span class="focus-bg"></span>
+				</label>
+			</div> -->
+
+		</div>
+	</div>
 </body>
 
 </html>

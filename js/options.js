@@ -1,4 +1,32 @@
-function save() {
+function compress(control, alt, shift, letter) {
+	return String(control ? 1 : 0) + String(alt ? 1 : 0) + String(shift ? 1 : 0) + letter;
+}
+
+function decompress(compressed) {
+	return [string2bool(value[0]), string2bool(value[1]), string2bool(value[2]), value[3]]
+}
+
+function string2bool(value) {
+	return parseInt(value) ? true : false;
+}
+
+function valid(control, alt, shift, letter, message=true) {
+	if (control == false && alt == false && shift == false) {
+		return false;
+	}
+
+	if (letter == '') {
+		return false;
+	}
+
+	if (message == '') {
+		return false;
+	}
+
+	return true;
+}
+
+function save_quicksend() {
 	data = processform();
 
 	control = data[0];
@@ -6,31 +34,36 @@ function save() {
 	shift = data[2];
 	letter = data[3];
 
-	chrome.storage.sync.set({
-		'control': control,
-		'alt': alt,
-		'shift': shift,
-		'letter': letter
-	}, function() {
-		alert("Success!");
-	});
+	if (valid(control, alt, shift, letter)) {
+		combination = compress(control, alt, shift, letter);
+
+		chrome.storage.sync.set({
+			'quicksend': combination
+		}, function() {
+			alert("Success!");
+			return true;
+		});
+	}
+
+	return false;
 }
 
-function restore() {
+function restore_quicksend() {
 	chrome.storage.sync.get([
-		'control',
-		'alt',
-		'shift',
-		'letter'
+		'quicksend'
 	], function(items) {
-		document.getElementById('control').checked = items.control;
-		document.getElementById('alt').checked = items.alt;
-		document.getElementById('shift').checked = items.shift;
+		data = decompress(items['quicksend']);
 
-		if (items.letter == undefined) {
+		control = data[0]; alt = data[1]; shift = data[2]; letter = data[3];
+
+		document.getElementById('control').checked = control;
+		document.getElementById('alt').checked = alt;
+		document.getElementById('shift').checked = shift;
+
+		if (letter == undefined) {
 			document.getElementById('letter').value = '';
 		} else {
-			document.getElementById('letter').value = items.letter;
+			document.getElementById('letter').value = letter;
 		}
 	});
 }
@@ -45,6 +78,6 @@ function processform() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-	restore();
-	document.getElementById('save').addEventListener('click', save);
+	restore_quicksend();
+	document.getElementById('save').addEventListener('click', save_quicksend);
 });
