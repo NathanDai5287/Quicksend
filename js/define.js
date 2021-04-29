@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	restore_sendable();
 })
 
-function compress(control, alt, shift, letter) { // BUG: no need to copy paste or import; funcions are automatically imported
+function compress(control, alt, shift, letter) { // FIXME: no need to copy paste or import; funcions are automatically imported
 	return String(control ? 1 : 0) + String(alt ? 1 : 0) + String(shift ? 1 : 0) + letter;
 }
 
@@ -283,4 +283,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
-setTimeout(restore_sendable, 1)
+setTimeout(restore_sendable, 10);

@@ -11,7 +11,7 @@ body {
 	background: #F6F1D1;
 	/* width: 1920px; */
 	margin: auto;
-
+	overflow: hidden;
 }
 
 /* The container */
