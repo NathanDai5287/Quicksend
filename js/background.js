@@ -1,10 +1,12 @@
-chrome.runtime.onInstalled.addListener(function () {
-	chrome.tabs.create({
-		url: 'https://www.quicksend.info/install',
-		active: true
-	});
+chrome.runtime.onInstalled.addListener(function (object) {
+	if (object.reason == 'install') {
+		chrome.tabs.create({
+			url: 'https://www.quicksend.info/install',
+			active: true
+		});
 
-	return false;
+		return false;
+	}
 });
 
-// TODO: add a "would you like to see popup for new updates"
+// TODO: show webpage only on install, not updates

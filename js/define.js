@@ -248,6 +248,10 @@ function save_sendable() {
 }
 
 function restore_sendable() { // TODO: fix order when loading
+	if (document.getElementById('definitions').children.length != 0) {
+		return false;
+	}
+
 	chrome.storage.sync.get('sendables', function(items) {
 		data = items;
 	});
@@ -283,4 +287,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
+setTimeout(restore_sendable, 1);
 setTimeout(restore_sendable, 10);
+setTimeout(restore_sendable, 100);
+setTimeout(restore_sendable, 1000);

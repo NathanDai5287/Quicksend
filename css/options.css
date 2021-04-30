@@ -12,6 +12,9 @@ body {
 	/* width: 1920px; */
 	margin: auto;
 	overflow: hidden;
+	user-select: none;
+	overscroll-behavior: contain;
+	/* overflow: hidden; */
 }
 
 /* The container */
@@ -36,7 +39,7 @@ body {
 	position: absolute;
 	right: 0;
 	overflow: auto;
-	max-height: 88%;
+	max-height: calc(100% - 125px);
 }
 
 #letter {
@@ -99,7 +102,7 @@ body {
 	position: absolute;
 	right: 0;
 	overflow: auto;
-	max-height: 90%;
+	max-height: 100%;
 	margin-top: 0;
 	padding-top: 0;
 
@@ -124,4 +127,23 @@ h2.title {
 
 div#definitions {
     margin-right: 16.5px;
+}
+
+footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	color: #223254;
+	text-align: left;
+	padding: 50px;
+	padding-bottom: 10px;
+}
+
+p.footer-instructions {
+	padding: 10px;
+}
+
+a {
+	color: #038277;
 }

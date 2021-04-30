@@ -87,21 +87,23 @@ document.onkeydown = function(e) {
             letter = quicksend[3];
         } catch {}
 
-        if (e.ctrlKey == control && e.altKey == alt && e.shiftKey == shift && e.key.toLowerCase() == letter.toLowerCase()) {
-            message();
-        } else {
-            for (const [compressed, message] of Object.entries(data)) {
-                key = decompress(compressed);
+        try {
+            if (e.ctrlKey == control && e.altKey == alt && e.shiftKey == shift && e.key.toLowerCase() == letter.toLowerCase()) {
+                message();
+            } else {
+                for (const [compressed, message] of Object.entries(data)) {
+                    key = decompress(compressed);
 
-                control = key[0];
-                alt = key[1];
-                shift = key[2];
-                letter = key[3];
+                    control = key[0];
+                    alt = key[1];
+                    shift = key[2];
+                    letter = key[3];
 
-                if (e.ctrlKey == control && e.altKey == alt && e.shiftKey == shift && e.key.toLowerCase() == letter.toLowerCase()) {
-                    sendable(message);
+                    if (e.ctrlKey == control && e.altKey == alt && e.shiftKey == shift && e.key.toLowerCase() == letter.toLowerCase()) {
+                        sendable(message);
+                    }
                 }
             }
-        }
+        } catch {}
     }
 }
