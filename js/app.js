@@ -18,27 +18,35 @@ function message() {
     }
     let latest = messages[messages.length - 1].innerText;
 
-    // enter into text box
-    let textbox = document.getElementsByClassName('KHxj8b tL9Q4c')[0];
-    textbox.value = latest;
-    textbox.setAttribute("data-initial-value", latest);
+    capitalize = chrome.storage.sync.get('capitalize', function(items) {
+        capitalize = items['capitalize'];
 
-    let input = document.getElementsByClassName('edhGSc zKHdkd XnKlKd')[0];
-    input.className = 'edhGSc zKHdkd XnKlKd CDELXb';
-
-    // focus on textbox
-    let text_focus = document.getElementsByClassName('edhGSc zKHdkd XnKlKd')[0];
-    text_focus.classList.add('u3bW4e');
-
-    let button = document.getElementsByClassName('uArJ5e Y5FYJe cjq2Db IOMpW Cs0vCd M9Bg4d')[0];
-    if (button == undefined) {
-        button = document.getElementsByClassName('uArJ5e Y5FYJe cjq2Db IOMpW Cs0vCd M9Bg4d RDPZE')[0];
-
-        if (button == undefined) {
-            button = document.getElementsByClassName('uArJ5e Y5FYJe cjq2Db IOMpW Cs0vCd RDPZE')[0];
+        if (capitalize) {
+            latest = latest[0].toUpperCase() + latest.slice(1, latest.length);
         }
-    }
-    button.setAttribute('aria-disabled', false);
+
+        // enter into text box
+        let textbox = document.getElementsByClassName('KHxj8b tL9Q4c')[0];
+        textbox.value = latest;
+        textbox.setAttribute("data-initial-value", latest);
+
+        let input = document.getElementsByClassName('edhGSc zKHdkd XnKlKd')[0];
+        input.className = 'edhGSc zKHdkd XnKlKd CDELXb';
+
+        // focus on textbox
+        let text_focus = document.getElementsByClassName('edhGSc zKHdkd XnKlKd')[0];
+        text_focus.classList.add('u3bW4e');
+
+        let button = document.getElementsByClassName('uArJ5e Y5FYJe cjq2Db IOMpW Cs0vCd M9Bg4d')[0];
+        if (button == undefined) {
+            button = document.getElementsByClassName('uArJ5e Y5FYJe cjq2Db IOMpW Cs0vCd M9Bg4d RDPZE')[0];
+
+            if (button == undefined) {
+                button = document.getElementsByClassName('uArJ5e Y5FYJe cjq2Db IOMpW Cs0vCd RDPZE')[0];
+            }
+        }
+        button.setAttribute('aria-disabled', false);
+    });
 
     return latest;
 }
