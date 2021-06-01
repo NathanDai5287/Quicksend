@@ -20,7 +20,7 @@ function insertAfter(newNode, referenceNode) {
     referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
 }
 
-function add_definition(control=false, alt=false, shift=false, character='', message='', prepend=true) { // TODOG: animation when inserting
+function add_definition(control=false, alt=false, shift=false, character='', message='', prepend=true) { // TODO: animation when inserting
 	definition = create_definition(control, alt, shift, character, message);
 
 	if (prepend) {

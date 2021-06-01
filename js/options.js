@@ -2,7 +2,7 @@ function compress(control, alt, shift, letter) {
 	return String(control ? 1 : 0) + String(alt ? 1 : 0) + String(shift ? 1 : 0) + letter;
 }
 
-function decompress(compressed) {
+function decompress(value) {
 	return [string2bool(value[0]), string2bool(value[1]), string2bool(value[2]), value[3]]
 }
 
