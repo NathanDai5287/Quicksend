@@ -22,7 +22,12 @@ function message() {
         capitalize = items['capitalize'];
 
         if (capitalize) {
-            latest = latest[0].toUpperCase() + latest.slice(1, latest.length);
+            bupper = /^[A-Z]/.test(latest)
+            if (bupper) {
+                latest = latest[0].toLowerCase() + latest.slice(1, latest.length);
+            } else {
+                latest = latest[0].toUpperCase() + latest.slice(1, latest.length);
+            }
         }
 
         // enter into text box
